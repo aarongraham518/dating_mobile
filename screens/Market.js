@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from "react-native";
 import { CryptoAsset } from "../components/CryptoAsset";
 import { Searchbar } from "react-native-paper";
@@ -70,6 +71,16 @@ let dummyCryptoData = [
 ];
 
 export const Markets = () => {
+  const [data, setData] = useState(dummyCryptoData);
+
+  let filteredData = data;
+  const onChangeSearch = (e) => {
+    console.log(e)
+    filteredData = data.filter((coin) => coin.cryptoName.includes(e.toLowerCase()))
+    console.log(filteredData)
+    setData(filteredData)
+  } 
+
   return (
     <View style={styles.container}>
       <View style={styles.greetingContainer}>
@@ -83,12 +94,13 @@ export const Markets = () => {
           style={styles.bckGrnd}
           color="white"
           iconColor="white"
+          onChangeText={onChangeSearch}
           // value="Search Crypto or NFTs..."
         />
       </View>
 
       <View>
-        {dummyCryptoData.map((data) => (
+        {filteredData.map((data) => (
           <CryptoAsset
             key={data.id}
             image={data.image}

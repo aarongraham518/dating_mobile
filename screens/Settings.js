@@ -25,13 +25,13 @@ const dummy_settings = [
     iconColor: "#209f84",
     backColor: "#e0efec",
     icon: "heart",
-    messageTxt: "Favorite Doctors",
+    messageTxt: "Watchlist",
   },
   {
     iconColor: "#a079ec",
     backColor: "#e0efec",
     icon: "help-circle",
-    messageTxt: "Favorite Doctors",
+    messageTxt: "Help",
   },
 ];
 export const Settings = () => {

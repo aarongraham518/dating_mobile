@@ -31,8 +31,11 @@ let dummyData = [
   },
 ];
 export const Home = () => {
-  let image = require("../assets/rock1.jpg");
-  let image1 = require("../assets/rock1.jpg");
+  let image = require("../assets/guitar.jpeg");
+  let image1 = require("../assets/vrheadset.jpeg");
+  let image2 = require("../assets/crypto_fiat.jpeg");
+  let image3 = require("../assets/counseling.jpeg");
+
   return (
 <View style={styles.container}>
       <View style={styles.greetingContainer}>
@@ -46,8 +49,12 @@ export const Home = () => {
         <MostPop/>
       </View>
       <View style={styles.mostPopContainer}>
-        <MusicCategory rockImage={image} title="Shape of You"/>
-        {/* <MusicCategory rockImage={image1}/> */}
+        <MusicCategory rockImage={image} title="Music NFTs"/>
+        <MusicCategory rockImage={image1} title="Metaverse"/>
+      </View>
+      <View style={styles.mostPopContainer}>
+        <MusicCategory rockImage={image2} title="Crypto vs Fiat"/>
+        <MusicCategory rockImage={image3} title="Crypto Help"/>
       </View>
     </View>
   )
@@ -62,16 +69,16 @@ const styles = StyleSheet.create({
     
   },
   greetingContainer:{
-    marginTop: '12%',
-    marginBottom: 25,
+    marginTop: '10%',
     // backgroundColor: 'blue',
     height: '7%',
   },
   searchContainer: {},
   mostPopContainer:{
-    // justifyContent: 'space-between',
-    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     // borderWidth: 1,
-    // borderColor: 'white'
+    // borderColor: 'white',
+    marginTop: 16
   }
 });

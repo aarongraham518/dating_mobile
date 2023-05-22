@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 export const MusicCategory = ({rockImage, title}) => {
  
   return (
-    <View style={styles.container}>
+    <View>
       <Image style={styles.image} source={rockImage} />
       <View style={styles.titleDownloadContainer}>
         <Text style={styles.title}>{title}</Text>
@@ -20,12 +20,11 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     width: 150,
-    height: 220,
+    height: 210,
     borderWidth: 2,
     // borderColor: 'red',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20
   },
   image: {
     width: 180,
@@ -34,13 +33,14 @@ const styles = StyleSheet.create({
     borderWidth: 2,
   },
   titleDownloadContainer:{
-    // borderWidth: 2,
-    // borderColor: 'white'
+   justifyContent: 'flex-start',
+  //  textAlign: 'left',
+   width: '100%'
   },
   title:{
     color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    marginTop: 10
+    textAlign: 'center'
   }
 });

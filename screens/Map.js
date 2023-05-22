@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
+import React from "react";
 import MapView from "react-native-maps";
 import { Marker } from "react-native-maps";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {  StyleSheet } from "react-native";
 
 // import { Search } from "../components/search.component";
 // import { MapCallout } from "../components/map-callout.component";
@@ -29,14 +29,6 @@ let mapData = [
   }
 ]
 export const Map = () => {
-  const [latDelta, setLatDelta] = useState(0);
-
-  useEffect(() => {
-    // const northeastLat = viewport.northeast.lat;
-    // const southwestLat = viewport.southwest.lat;
-
-    // setLatDelta(northeastLat - southwestLat);
-  }, []);
 
   return (
     <>
