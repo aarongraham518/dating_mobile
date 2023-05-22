@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { Profile } from './screens/Profile';
+import { Map, Profile } from './screens/Map';
 import { Markets } from './screens/Market';
 import { Assets } from './screens/Assets';
 import { Home } from './screens/Home';
@@ -15,7 +15,7 @@ const TAB_ICON = {
   Home: "home-sharp",
   Assets: "cash",
   Market: "bar-chart",
-  Profile: "person",
+  Map: "map",
   Settings: "settings"
 };
 
@@ -50,7 +50,7 @@ export default function App() {
       <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
       <Tab.Screen name="Assets" component={Assets} options={{ headerShown: false }}/>
       <Tab.Screen name="Market" component={Markets} options={{ headerShown: false }}/>
-      <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
+      <Tab.Screen name="Map" component={Map} options={{ headerShown: false }}/>
       <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
 
     </Tab.Navigator>
