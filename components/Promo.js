@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ImageBackground, Image } from "react-native";
 
 export const Promo = () => {
-  let image = require("../assets/jamming.jpg");
+  let image = require("../assets/busycitydark.png");
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -10,9 +10,9 @@ export const Promo = () => {
         style={styles.promoContainer}
       >
         <View style={styles.promoTextButtonContainer}>
-          <Text style={[styles.promoText]}>30%</Text>
+          <Text style={[styles.promoText]}>20%</Text>
           <Text style={[styles.promoText, styles.promoOffText]}>OFF</Text>
-          <Text style={[styles.promoTextSmall]}>Listen to Earn Music NFTs</Text>
+          <Text style={[styles.promoTextSmall]}>Find members today</Text>
           <View style={styles.premiumContainer}>
             <Text style={styles.premiumText}>PREMIUM NOW</Text>
           </View>

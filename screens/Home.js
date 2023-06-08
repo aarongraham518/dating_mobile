@@ -1,40 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { Greeting } from '../components/Greeting';
 import { MostPop } from '../components/MostPop';
-import { MusicCategory } from '../components/MusicCategory';
+import { DatingCategory } from '../components/DatingCategory';
 import { Promo } from '../components/Promo';
 
-let dummyData = [
-  {
-    id: Math.random(),
-    Title: "Shape of You",
-    downloadNumber: '3.4 M',
-    image: require("../assets/rock1.jpg"),
-  },
-  {
-    id: Math.random(),
-    Title: "Shape of You",
-    downloadNumber: '3.4 M',
-    image: require("../assets/rock1.jpg"),
-  },
-  {
-    id: Math.random(),
-    Title: "Shape of You",
-    downloadNumber: '3.4 M',
-    image: require("../assets/rock1.jpg"),
-  },
-  {
-    id: Math.random(),
-    Title: "Shape of You",
-    downloadNumber: '3.4 M',
-    image: require("../assets/rock1.jpg"),
-  },
-];
+
 export const Home = () => {
-  let image = require("../assets/guitar.jpeg");
-  let image1 = require("../assets/vrheadset.jpeg");
-  let image2 = require("../assets/crypto_fiat.jpeg");
-  let image3 = require("../assets/counseling.jpeg");
+  let image = require("../assets/singles.jpeg");
+  let image1 = require("../assets/movies.jpeg");
+  let image2 = require("../assets/dating.jpeg");
+  let image3 = require("../assets/therapy.jpeg");
 
   return (
 <View style={styles.container}>
@@ -49,12 +24,12 @@ export const Home = () => {
         <MostPop/>
       </View>
       <View style={styles.mostPopContainer}>
-        <MusicCategory rockImage={image} title="Music NFTs"/>
-        <MusicCategory rockImage={image1} title="Metaverse"/>
+        <DatingCategory rockImage={image} title="Singles"/>
+        <DatingCategory rockImage={image1} title="Movies Only"/>
       </View>
       <View style={styles.mostPopContainer}>
-        <MusicCategory rockImage={image2} title="Crypto vs Fiat"/>
-        <MusicCategory rockImage={image3} title="Crypto Help"/>
+        <DatingCategory rockImage={image2} title="Dating 101"/>
+        <DatingCategory rockImage={image3} title="Counseling"/>
       </View>
     </View>
   )

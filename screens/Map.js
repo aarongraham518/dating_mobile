@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import MapView from "react-native-maps";
 import { Marker } from "react-native-maps";
 import {  StyleSheet } from "react-native";
@@ -6,51 +6,40 @@ import {  StyleSheet } from "react-native";
 // import { Search } from "../components/search.component";
 // import { MapCallout } from "../components/map-callout.component";
 
-let mapData = [
-  {
-    latitude: 27.76757844065867, 
-    longitude: -82.63462421336362
-  },
-  {
-    latitude: 27.75480468996914, 
-    longitude: -82.64110732487218
-  },
-  { 
-    latitude: 27.75715042467095, 
-    longitude: -82.63028084852364
-  },
-  {
-    latitude: 27.77012170753001, 
-    longitude: -82.63024891201522
-  },
-  {
-    latitude: 27.785035576059684, 
-    longitude: -82.64435979282699
-  }
-]
 export const Map = () => {
+  const [userMapData, setUserMapData] = useState([]);
 
+  const getUserMapData = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users?_start=0&_limit=8');
+    const userData = await response.json();
+
+    setUserMapData(userData);    
+  }
+  
+  useEffect(() => {
+    getUserMapData();
+  },[])
   return (
     <>
       {/* <Search /> */}
       <MapView
       style={styles.container}
       region={{
-        latitude: 27.76757844065867,
-        longitude: -82.63462421336362,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        latitude: 24.8918,
+        longitude: 21.8984,
+        latitudeDelta: 21.8984,
+        longitudeDelta: 21.8984,
       }}
       >
-       {mapData.map((atm, index) => (
+       {userMapData.map((user, index) => (
         <Marker
           key={index}
             coordinate={{
-              latitude: atm.latitude,
-              longitude: atm.longitude
+              latitude: user.address.geo.lat,
+              longitude: user.address.geo.lng
             }}
-            title={'CoinFlip ATM'}
-            description={'Buy Bitcoin and Matic Here!'}
+            title={user.name}
+            description={user.website}
           />     
        ))}
                

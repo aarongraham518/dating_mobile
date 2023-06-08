@@ -50,7 +50,7 @@ export const Settings = () => {
 
         <View style={styles.userNameContainer}>
           <Text style={styles.userNameName}>Aaron Graham</Text>
-          <Text style={styles.userNameSocial}>@grahamCrypto</Text>
+          <Text style={styles.userNameSocial}>@grahamLove</Text>
         </View>
 
         <SettingOptions data={dummy_settings} />

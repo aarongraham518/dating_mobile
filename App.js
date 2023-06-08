@@ -1,11 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,} from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { Map, Profile } from './screens/Map';
-import { Markets } from './screens/Market';
-import { Assets } from './screens/Assets';
+import { Users } from './screens/Users';
 import { Home } from './screens/Home';
 import { Settings } from './screens/Settings';
 
@@ -13,13 +12,10 @@ const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
   Home: "home-sharp",
-  Assets: "cash",
-  Market: "bar-chart",
+  Users: "md-heart-sharp",
   Map: "map",
   Settings: "settings"
 };
-
-
 
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
@@ -48,8 +44,7 @@ export default function App() {
       }}
     >
       <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
-      <Tab.Screen name="Assets" component={Assets} options={{ headerShown: false }}/>
-      <Tab.Screen name="Market" component={Markets} options={{ headerShown: false }}/>
+      <Tab.Screen name="Users" component={Users} options={{ headerShown: false }}/>
       <Tab.Screen name="Map" component={Map} options={{ headerShown: false }}/>
       <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
 
