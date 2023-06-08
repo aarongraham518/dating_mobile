@@ -1,5 +1,5 @@
 # Date Mobile
-
+ 
 If running locally, install node_modules: npm install
 To run applications: npm run start
 
