@@ -43,7 +43,7 @@ export default function App() {
         inactiveTintColor: "gray",
       }}
     >
-      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+      <Tab.Screen name="Users" component={Home} options={{ headerShown: false }}/>
       <Tab.Screen name="Users" component={Users} options={{ headerShown: false }}/>
       <Tab.Screen name="Map" component={Map} options={{ headerShown: false }}/>
       <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
